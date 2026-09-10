@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | SmartKhata</title>
+
+    <link rel="stylesheet" href="/css/settings.css">
+    <link rel="stylesheet" href="/css/theme.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">₹</div>
+
+                <div>
+                    <h2>SmartKhata</h2>
+                    <span>Digital Finance</span>
+                </div>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="/dashboard.html" class="nav-item">
+                    <span>📊</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="/people.html" class="nav-item">
+                    <span>👥</span>
+                    <span>People</span>
+                </a>
+
+                <a href="/transactions.html" class="nav-item">
+                    <span>💰</span>
+                    <span>Transactions</span>
+                </a>
+
+                <a href="/payments.html" class="nav-item">
+                    <span>💳</span>
+                    <span>Payments</span>
+                </a>
+
+                <a href="/reminders.html" class="nav-item">
+                    <span>🔔</span>
+                    <span>Reminders</span>
+                </a>
+
+                <a href="/reports.html" class="nav-item">
+                    <span>📈</span>
+                    <span>Reports</span>
+                </a>
+
+                <a href="/settings.html" class="nav-item active">
+                    <span>⚙️</span>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <button
+                id="logoutButton"
+                class="nav-item logout-button"
+                type="button"
+            >
+                <span>🚪</span>
+                <span>Logout</span>
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h1>Settings</h1>
+
+                    <p>
+                        Manage your SmartKhata account and preferences.
+                    </p>
+                </div>
+
+            </header>
+
+
+            <!-- SETTINGS CONTENT -->
+            <section class="settings-container">
+
+
+                <!-- PROFILE -->
+                <div class="settings-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            👤
+                        </div>
+
+                        <div>
+                            <h2>Profile</h2>
+
+                            <p>
+                                Manage your personal information.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <form id="profileForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="fullName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Your email"
+                                    disabled
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="profileMessage"
+                            class="message"
+                        ></div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                            id="saveProfileButton"
+                        >
+                            Save Changes
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- APPEARANCE -->
+                <div class="settings-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            🎨
+                        </div>
+
+                        <div>
+                            <h2>Appearance</h2>
+
+                            <p>
+                                Customize how SmartKhata looks.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Theme</h3>
+
+                            <p>
+                                Choose your preferred appearance.
+                            </p>
+
+                        </div>
+
+
+                        <select
+                            id="themeSelect"
+                            class="setting-select"
+                        >
+                            <option value="light">
+                                Light
+                            </option>
+
+                            <option value="dark">
+                                Dark
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="settings-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            🔔
+                        </div>
+
+                        <div>
+                            <h2>Notifications</h2>
+
+                            <p>
+                                Control your payment notifications.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Payment Notifications</h3>
+
+                            <p>
+                                Get notified about important payment activity.
+                            </p>
+
+                        </div>
+
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="paymentNotifications"
+                                checked
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Overdue Reminders</h3>
+
+                            <p>
+                                Receive alerts when payments become overdue.
+                            </p>
+
+                        </div>
+
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="overdueNotifications"
+                                checked
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Upcoming Payment Reminders</h3>
+
+                            <p>
+                                Get reminders for upcoming due dates.
+                            </p>
+
+                        </div>
+
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="upcomingNotifications"
+                                checked
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ACCOUNT -->
+                <div class="settings-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            🔐
+                        </div>
+
+                        <div>
+                            <h2>Account</h2>
+
+                            <p>
+                                Manage your account security.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Change Password</h3>
+
+                            <p>
+                                Update your account password.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="changePasswordButton"
+                            class="secondary-button"
+                        >
+                            Change Password
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DANGER ZONE -->
+                <div class="settings-card danger-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon danger-icon">
+                            ⚠️
+                        </div>
+
+                        <div>
+                            <h2>Danger Zone</h2>
+
+                            <p>
+                                Permanent account actions.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Delete Account</h3>
+
+                            <p>
+                                Permanently delete your SmartKhata account and data.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="deleteAccountButton"
+                            class="danger-button"
+                        >
+                            Delete Account
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- PASSWORD MODAL -->
+    <div
+        id="passwordModal"
+        class="modal-overlay"
+    >
+
+        <div class="modal">
+
+            <button
+                id="closePasswordModal"
+                class="modal-close"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <div class="modal-icon">
+                🔐
+            </div>
+
+
+            <h2>Change Password</h2>
+
+            <p>
+                We'll send a password reset link to your email address.
+            </p>
+
+
+            <div
+                id="passwordMessage"
+                class="message"
+            ></div>
+
+
+            <button
+                id="sendPasswordReset"
+                class="primary-button"
+                type="button"
+            >
+                Send Reset Link
+            </button>
+
+        </div>
+
+    </div>
+
+<script
+    type="module"
+    src="/src/js/theme.js"
+></script>
+
+    <script
+        type="module"
+        src="/src/js/settings.js"
+    ></script>
+
+</body>
+
+</html>

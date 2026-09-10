@@ -1,0 +1,424 @@
+/* =========================================================
+   SMARTKHATA GLOBAL THEME
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   LIGHT THEME DEFAULTS
+   --------------------------------------------------------- */
+
+:root {
+    --sk-bg: #f6f8fc;
+    --sk-surface: #ffffff;
+    --sk-surface-2: #f8fafc;
+
+    --sk-text: #111827;
+    --sk-text-secondary: #6b7280;
+    --sk-text-muted: #94a3b8;
+
+    --sk-border: #e5e7eb;
+    --sk-border-light: #eef2f7;
+
+    --sk-hover: #f1f5f9;
+
+    --sk-primary: #2563eb;
+    --sk-primary-light: #eff6ff;
+
+    --sk-danger: #dc2626;
+    --sk-danger-light: #fef2f2;
+
+    --sk-success: #16a34a;
+}
+
+
+/* ---------------------------------------------------------
+   GLOBAL DARK THEME
+   --------------------------------------------------------- */
+
+html[data-theme="dark"] {
+
+    --sk-bg: #0f172a;
+    --sk-surface: #111827;
+    --sk-surface-2: #1e293b;
+
+    --sk-text: #f8fafc;
+    --sk-text-secondary: #94a3b8;
+    --sk-text-muted: #64748b;
+
+    --sk-border: #1f2937;
+    --sk-border-light: #263244;
+
+    --sk-hover: #1e293b;
+
+    --sk-primary: #3b82f6;
+    --sk-primary-light: #172554;
+
+    --sk-danger: #ef4444;
+    --sk-danger-light: #2a1518;
+
+    --sk-success: #22c55e;
+}
+
+
+/* =========================================================
+   PAGE BACKGROUND
+   ========================================================= */
+
+html[data-theme="dark"] body {
+    background-color: var(--sk-bg);
+    color: var(--sk-text);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+html[data-theme="dark"] .sidebar {
+    background-color: var(--sk-surface);
+    border-color: var(--sk-border);
+}
+
+
+/* Brand */
+
+html[data-theme="dark"] .brand h2 {
+    color: var(--sk-text);
+}
+
+html[data-theme="dark"] .brand span {
+    color: var(--sk-text-secondary);
+}
+
+
+/* Navigation */
+
+html[data-theme="dark"] .nav-item {
+    color: #cbd5e1;
+}
+
+html[data-theme="dark"] .nav-item:hover {
+    background-color: var(--sk-hover);
+    color: #60a5fa;
+}
+
+html[data-theme="dark"] .nav-item.active {
+    background-color: var(--sk-primary-light);
+    color: #60a5fa;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+html[data-theme="dark"] .main-content {
+    background-color: var(--sk-bg);
+}
+
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+html[data-theme="dark"] .topbar {
+    border-color: var(--sk-border);
+}
+
+html[data-theme="dark"] .topbar h1,
+html[data-theme="dark"] .topbar h2 {
+    color: var(--sk-text);
+}
+
+html[data-theme="dark"] .topbar p {
+    color: var(--sk-text-secondary);
+}
+
+
+/* =========================================================
+   COMMON PAGE HEADERS
+   ========================================================= */
+
+html[data-theme="dark"] .page-header h1,
+html[data-theme="dark"] .page-header h2 {
+    color: var(--sk-text);
+}
+
+html[data-theme="dark"] .page-header p {
+    color: var(--sk-text-secondary);
+}
+
+
+/* =========================================================
+   COMMON CONTENT AREAS
+   ========================================================= */
+
+html[data-theme="dark"] .content,
+html[data-theme="dark"] .page-container {
+    color: var(--sk-text);
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .summary-card,
+html[data-theme="dark"] .transaction-card,
+html[data-theme="dark"] .payment-card,
+html[data-theme="dark"] .person-card,
+html[data-theme="dark"] .reminder-card,
+html[data-theme="dark"] .report-card,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .table-wrapper {
+    background-color: var(--sk-surface);
+    border-color: var(--sk-border);
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+    background-color: #0f172a;
+    color: var(--sk-text);
+    border-color: #334155;
+}
+
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+    color: #64748b;
+}
+
+
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] textarea:focus,
+html[data-theme="dark"] select:focus {
+    border-color: var(--sk-primary);
+}
+
+
+/* Disabled */
+
+html[data-theme="dark"] input:disabled,
+html[data-theme="dark"] select:disabled {
+    background-color: #1e293b;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+html[data-theme="dark"] label {
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+html[data-theme="dark"] table {
+    color: var(--sk-text);
+}
+
+html[data-theme="dark"] th {
+    background-color: #1e293b;
+    color: #cbd5e1;
+    border-color: var(--sk-border);
+}
+
+html[data-theme="dark"] td {
+    border-color: var(--sk-border);
+    color: #e2e8f0;
+}
+
+html[data-theme="dark"] tr:hover {
+    background-color: var(--sk-hover);
+}
+
+
+/* =========================================================
+   MODALS
+   ========================================================= */
+
+html[data-theme="dark"] .modal,
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .modal-box {
+    background-color: var(--sk-surface);
+    color: var(--sk-text);
+    border-color: var(--sk-border);
+}
+
+
+html[data-theme="dark"] .modal h2,
+html[data-theme="dark"] .modal h3 {
+    color: var(--sk-text);
+}
+
+
+html[data-theme="dark"] .modal p {
+    color: var(--sk-text-secondary);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+html[data-theme="dark"] .secondary-button {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+html[data-theme="dark"] .secondary-button:hover {
+    background-color: #263449;
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+   ========================================================= */
+
+html[data-theme="dark"] .notification-panel {
+    background-color: var(--sk-surface);
+    border-color: var(--sk-border);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+html[data-theme="dark"] .notification-header {
+    border-color: var(--sk-border);
+}
+
+
+html[data-theme="dark"] .notification-header h3 {
+    color: var(--sk-text);
+}
+
+
+html[data-theme="dark"] .notification-header p {
+    color: var(--sk-text-secondary);
+}
+
+
+html[data-theme="dark"] .notification-item {
+    border-color: var(--sk-border);
+}
+
+
+html[data-theme="dark"] .notification-item:hover {
+    background-color: var(--sk-hover);
+}
+
+
+html[data-theme="dark"] .notification-title {
+    color: var(--sk-text);
+}
+
+
+html[data-theme="dark"] .notification-message {
+    color: var(--sk-text-secondary);
+}
+
+
+html[data-theme="dark"] .notification-footer {
+    border-color: var(--sk-border);
+}
+
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+html[data-theme="dark"] .settings-card {
+    background-color: var(--sk-surface);
+    border-color: var(--sk-border);
+}
+
+
+html[data-theme="dark"] .settings-card .card-heading h2 {
+    color: var(--sk-text);
+}
+
+
+html[data-theme="dark"] .settings-card .card-heading p {
+    color: var(--sk-text-secondary);
+}
+
+
+html[data-theme="dark"] .setting-row {
+    border-color: var(--sk-border);
+}
+
+
+html[data-theme="dark"] .setting-info h3 {
+    color: var(--sk-text);
+}
+
+
+html[data-theme="dark"] .setting-info p {
+    color: var(--sk-text-secondary);
+}
+
+
+html[data-theme="dark"] .setting-select {
+    background-color: #0f172a;
+    color: var(--sk-text);
+    border-color: #334155;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+html[data-theme="dark"] {
+    scrollbar-color: #334155 #0f172a;
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+
+/* =========================================================
+   SMOOTH THEME TRANSITION
+   ========================================================= */
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .main-content,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .summary-card,
+html[data-theme="dark"] .settings-card,
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
