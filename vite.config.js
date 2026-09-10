@@ -13,7 +13,8 @@ export default defineConfig({
                 people: resolve(__dirname, "people.html"),
                 reminders: resolve(__dirname, "reminders.html"),
                 reports: resolve(__dirname, "reports.html"),
-                transactions: resolve(__dirname, "transactions.html")
+                transactions: resolve(__dirname, "transactions.html"),
+                settings: resolve(__dirname, "settings.html")
             }
         }
     }
