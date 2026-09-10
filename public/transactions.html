@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Transactions | SmartKhata</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/transactions.css"
+    >
+
+</head>
+
+<body>
+
+    <div
+        id="sidebarOverlay"
+        class="sidebar-overlay"
+    ></div>
+
+
+    <!-- SIDEBAR -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ₹
+            </div>
+
+            <div>
+
+                <h2>SmartKhata</h2>
+
+                <span>
+                    Money Management
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a
+                href="/dashboard.html"
+                class="nav-item"
+            >
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="/people.html"
+                class="nav-item"
+            >
+                <span>👥</span>
+                <span>People</span>
+            </a>
+
+
+            <a
+                href="/transactions.html"
+                class="nav-item active"
+            >
+                <span>💰</span>
+                <span>Transactions</span>
+            </a>
+
+
+            <a href="/payments.html" class="nav-item">
+    <span>💸</span>
+    <span>Payments</span>
+</a>
+
+            <a
+                href="reminders.html"
+                class="nav-item"
+            >
+                <span>🔔</span>
+                <span>Reminders</span>
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="nav-item"
+            >
+                <span>📊</span>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+
+            <button
+                id="logoutButton"
+                class="nav-item logout-button"
+            >
+
+                <span>🚪</span>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button
+                id="menuButton"
+                class="menu-button"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-right">
+
+                <button class="notification-button">
+                    🔔
+                </button>
+
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        <span id="userInitial">U</span>
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <strong id="userName">
+                            User
+                        </strong>
+
+                        <span id="userEmail">
+                            Loading...
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- PAGE -->
+
+        <section class="page-container">
+
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>
+                        Transactions
+                    </h1>
+
+                    <p>
+                        Record money to receive or money to pay.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="addTransactionButton"
+                    class="primary-button"
+                >
+                    ＋ Add Transaction
+                </button>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <section
+                id="transactionFormCard"
+                class="form-card hidden"
+            >
+
+                <div class="form-header">
+
+                    <div>
+
+                        <h2>
+                            Add Transaction
+                        </h2>
+
+                        <p>
+                            Record a new credit or debit.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="closeFormButton"
+                        class="close-button"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+
+                <form id="transactionForm">
+
+
+                    <!-- TYPE -->
+
+                    <div class="type-selector">
+
+                        <button
+                            type="button"
+                            id="creditButton"
+                            class="type-button credit selected"
+                        >
+
+                            <span>↓</span>
+
+                            <div>
+
+                                <strong>
+                                    Credit
+                                </strong>
+
+                                <small>
+                                    To Receive
+                                </small>
+
+                            </div>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="debitButton"
+                            class="type-button debit"
+                        >
+
+                            <span>↑</span>
+
+                            <div>
+
+                                <strong>
+                                    Debit
+                                </strong>
+
+                                <small>
+                                    To Pay
+                                </small>
+
+                            </div>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="form-grid">
+
+
+                        <!-- PERSON -->
+
+                        <div class="form-group full-width">
+
+                            <label for="person">
+                                Person *
+                            </label>
+
+                            <select
+                                id="person"
+                                required
+                            >
+
+                                <option value="">
+                                    Select a person
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- TITLE -->
+
+                        <div class="form-group">
+
+                            <label for="title">
+                                Title *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="title"
+                                maxlength="150"
+                                placeholder="e.g. Laptop repair"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- AMOUNT -->
+
+                        <div class="form-group">
+
+                            <label for="amount">
+                                Amount *
+                            </label>
+
+                            <div class="amount-input">
+
+                                <span>₹</span>
+
+                                <input
+                                    type="number"
+                                    id="amount"
+                                    min="0.01"
+                                    step="0.01"
+                                    placeholder="0.00"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DUE DATE -->
+
+                        <div class="form-group">
+
+                            <label for="dueDate">
+                                Due Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="dueDate"
+                            >
+
+                        </div>
+
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="form-group">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+                            <input
+                                type="text"
+                                id="description"
+                                maxlength="500"
+                                placeholder="Optional description"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            id="cancelButton"
+                            class="secondary-button"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            id="saveButton"
+                            class="primary-button"
+                        >
+                            Save Transaction
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- TRANSACTIONS LIST -->
+
+            <section class="transactions-card">
+
+                <div class="list-header">
+
+                    <div>
+
+                        <h2>
+                            Transaction History
+                        </h2>
+
+                        <span id="transactionCount">
+                            0 transactions
+                        </span>
+
+                    </div>
+
+
+                    <div class="search-container">
+
+                        <span>🔍</span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search transactions..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div id="transactionsList">
+
+                    <div class="loading">
+                        Loading transactions...
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+
+    <script
+        type="module"
+        src="/js/transactions.js"
+    ></script>
+
+</body>
+
+</html>

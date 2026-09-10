@@ -1,0 +1,1054 @@
+/* ============================================================
+   SMARTKHATA - REMINDERS
+============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #0f172a;
+
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 246px;
+    height: 100vh;
+
+    background: #ffffff;
+
+    border-right: 1px solid #e2e8f0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 24px 16px;
+
+    z-index: 10;
+}
+
+
+/* ============================================================
+   BRAND
+============================================================ */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 10px 28px;
+}
+
+
+.brand-icon {
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    background: #2563eb;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+.brand h2 {
+
+    font-size: 19px;
+
+    line-height: 1.2;
+}
+
+
+.brand span {
+
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    margin-top: 3px;
+}
+
+
+/* ============================================================
+   NAVIGATION
+============================================================ */
+
+.navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.nav-item {
+
+    width: 100%;
+
+    min-height: 44px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #475569;
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 16px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: 0.2s ease;
+}
+
+
+.nav-item:hover {
+
+    background: #f1f5f9;
+
+    color: #2563eb;
+}
+
+
+.nav-item.active {
+
+    background: #e8efff;
+
+    color: #2563eb;
+
+    font-weight: 600;
+}
+
+
+.nav-item span:first-child {
+
+    width: 18px;
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   SIDEBAR BOTTOM
+============================================================ */
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.logout-item {
+
+    font-family: inherit;
+}
+
+
+/* ============================================================
+   MAIN
+============================================================ */
+
+.main-content {
+
+    margin-left: 246px;
+
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   TOPBAR
+============================================================ */
+
+.topbar {
+
+    height: 74px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 30px;
+}
+
+
+.profile-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.notification-button {
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 11px;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+.profile-avatar {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+}
+
+
+.profile-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.profile-details strong {
+
+    font-size: 14px;
+}
+
+
+.profile-details span {
+
+    font-size: 11px;
+
+    color: #94a3b8;
+}
+
+
+/* ============================================================
+   CONTENT
+============================================================ */
+
+.content {
+
+    padding: 38px 36px;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+
+.page-header {
+
+    margin-bottom: 28px;
+}
+
+
+.page-header h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 7px;
+}
+
+
+.page-header p {
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   SUMMARY
+============================================================ */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 26px;
+}
+
+
+.summary-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 125px;
+}
+
+
+.summary-icon {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
+    flex-shrink: 0;
+}
+
+
+.overdue-card .summary-icon {
+
+    background: #fee2e2;
+}
+
+
+.today-card .summary-icon {
+
+    background: #fef3c7;
+}
+
+
+.tomorrow-card .summary-icon {
+
+    background: #dbeafe;
+}
+
+
+.upcoming-card .summary-icon {
+
+    background: #dcfce7;
+}
+
+
+.summary-card div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.summary-card span {
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+.summary-card strong {
+
+    font-size: 24px;
+
+    line-height: 1.2;
+}
+
+
+.summary-card small {
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   REMINDER SECTION
+============================================================ */
+
+.reminder-section {
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+
+.section-header {
+
+    min-height: 86px;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.section-header h2 {
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+
+.section-header > div:first-child span {
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   FILTER
+============================================================ */
+
+.filter-area {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.filter-area input {
+
+    width: 245px;
+
+    height: 40px;
+
+    border: 1px solid #dbe2ea;
+
+    border-radius: 9px;
+
+    padding: 0 13px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+
+.filter-area input:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.08);
+}
+
+
+.filter-area select {
+
+    height: 40px;
+
+    min-width: 155px;
+
+    border: 1px solid #dbe2ea;
+
+    border-radius: 9px;
+
+    padding: 0 12px;
+
+    background: #ffffff;
+
+    font-family: inherit;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   REMINDER LIST
+============================================================ */
+
+.reminders-list {
+
+    min-height: 300px;
+}
+
+
+.reminder-row {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1.5fr
+        1fr
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 21px 22px;
+
+    border-bottom: 1px solid #edf1f5;
+
+    transition: 0.2s ease;
+}
+
+
+.reminder-row:last-child {
+
+    border-bottom: none;
+}
+
+
+.reminder-row:hover {
+
+    background: #fafcff;
+}
+
+
+/* ============================================================
+   PERSON
+============================================================ */
+
+.reminder-person {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.person-avatar {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #e8efff;
+
+    color: #2563eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    flex-shrink: 0;
+}
+
+
+.person-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.person-details strong {
+
+    font-size: 14px;
+}
+
+
+.person-details span {
+
+    font-size: 11px;
+
+    color: #94a3b8;
+}
+
+
+/* ============================================================
+   TITLE
+============================================================ */
+
+.reminder-title {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.reminder-title strong {
+
+    font-size: 14px;
+}
+
+
+.reminder-title span {
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    line-height: 1.3;
+}
+
+
+/* ============================================================
+   DATE
+============================================================ */
+
+.reminder-date {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.reminder-date span {
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+.reminder-date strong {
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   AMOUNT
+============================================================ */
+
+.reminder-amount {
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.reminder-amount.credit {
+
+    color: #059669;
+}
+
+
+.reminder-amount.debit {
+
+    color: #dc2626;
+}
+
+
+/* ============================================================
+   STATUS
+============================================================ */
+
+.reminder-status {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+}
+
+
+.status-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.status-overdue {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+
+.status-today {
+
+    background: #fef3c7;
+
+    color: #a16207;
+}
+
+
+.status-tomorrow {
+
+    background: #dbeafe;
+
+    color: #2563eb;
+}
+
+
+.status-upcoming {
+
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+
+.days-text {
+
+    font-size: 10px;
+
+    color: #94a3b8;
+}
+
+
+/* ============================================================
+   EMPTY / LOADING
+============================================================ */
+
+.loading,
+.empty-state {
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    padding: 30px;
+}
+
+
+.empty-state-icon {
+
+    font-size: 36px;
+
+    margin-bottom: 12px;
+}
+
+
+.empty-state h3 {
+
+    color: #334155;
+
+    margin-bottom: 6px;
+}
+
+
+.empty-state p {
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1100px) {
+
+    .summary-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .reminder-row {
+
+        grid-template-columns:
+            1.5fr
+            1fr
+            1fr;
+
+    }
+
+
+    .reminder-status {
+
+        grid-column: span 1;
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+
+        width: 76px;
+
+        padding: 20px 10px;
+
+    }
+
+
+    .brand > div:last-child,
+    .nav-item span:last-child {
+
+        display: none;
+
+    }
+
+
+    .brand {
+
+        justify-content: center;
+
+        padding-left: 0;
+        padding-right: 0;
+
+    }
+
+
+    .nav-item {
+
+        justify-content: center;
+
+        padding: 0;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 76px;
+
+    }
+
+
+    .content {
+
+        padding: 25px 18px;
+
+    }
+
+
+    .section-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .filter-area {
+
+        width: 100%;
+
+    }
+
+
+    .filter-area input,
+    .filter-area select {
+
+        width: 50%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .summary-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .topbar {
+
+        padding: 0 15px;
+
+    }
+
+
+    .profile-details {
+
+        display: none;
+
+    }
+
+
+    .reminder-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+    }
+
+
+    .reminder-status {
+
+        align-items: flex-start;
+
+    }
+
+
+    .filter-area {
+
+        flex-direction: column;
+
+    }
+
+
+    .filter-area input,
+    .filter-area select {
+
+        width: 100%;
+
+    }
+
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | SmartKhata</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-card">
+
+            <h1>SmartKhata</h1>
+
+            <h2>Create Account</h2>
+
+            <p class="auth-subtitle">
+                Start managing your credit and payments
+            </p>
+
+            <form id="registerForm">
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="registerButton">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+            <p class="auth-link">
+                Already have an account?
+                <a href="/login.html">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="/js/auth.js"></script>
+
+</body>
+
+</html>

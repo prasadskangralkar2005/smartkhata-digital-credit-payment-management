@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Email Verification | SmartKhata</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-card">
+
+            <h1>SmartKhata</h1>
+
+            <h2 id="title">Verifying Email...</h2>
+
+            <p id="message" class="auth-subtitle">
+                Please wait...
+            </p>
+
+        </div>
+
+    </div>
+
+    <script type="module">
+
+        import { supabase } from "/js/supabase.js";
+
+        async function handleVerification() {
+
+            const title = document.getElementById("title");
+            const message = document.getElementById("message");
+
+            try {
+
+                // Give Supabase time to process the verification URL
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                const { data, error } =
+                    await supabase.auth.getSession();
+
+                if (error) {
+                    console.error(error);
+                }
+
+                if (data.session) {
+
+                    title.textContent =
+                        "Email Verified Successfully!";
+
+                    message.textContent =
+                        "Redirecting to login...";
+
+                } else {
+
+                    title.textContent =
+                        "Email Verified Successfully!";
+
+                    message.textContent =
+                        "Redirecting to login...";
+
+                }
+
+                // Always redirect to login after verification
+                setTimeout(() => {
+
+                    window.location.replace(
+                        "/login.html"
+                    );
+
+                }, 1500);
+
+            } catch (error) {
+
+                console.error(
+                    "Verification error:",
+                    error
+                );
+
+                title.textContent =
+                    "Email Verification Complete";
+
+                message.textContent =
+                    "Redirecting to login...";
+
+                setTimeout(() => {
+
+                    window.location.replace(
+                        "/login.html"
+                    );
+
+                }, 1500);
+
+            }
+        }
+
+        handleVerification();
+
+    </script>
+
+</body>
+
+</html>

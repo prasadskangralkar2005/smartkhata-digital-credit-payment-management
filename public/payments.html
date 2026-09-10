@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Payments | SmartKhata</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/payments.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ₹
+        </div>
+
+        <div>
+            <h2>SmartKhata</h2>
+            <p>Money Management</p>
+        </div>
+
+    </div>
+
+
+    <nav class="navigation">
+
+        <a
+            href="/dashboard.html"
+            class="nav-item"
+        >
+            <span>🏠</span>
+            <span>Dashboard</span>
+        </a>
+
+
+        <a
+            href="/people.html"
+            class="nav-item"
+        >
+            <span>👥</span>
+            <span>People</span>
+        </a>
+
+
+        <a
+            href="/transactions.html"
+            class="nav-item"
+        >
+            <span>💰</span>
+            <span>Transactions</span>
+        </a>
+
+
+        <a
+            href="/payments.html"
+            class="nav-item active"
+        >
+            <span>💸</span>
+            <span>Payments</span>
+        </a>
+
+
+        <a
+            href="reminders.html"
+            class="nav-item"
+        >
+            <span>🔔</span>
+            <span>Reminders</span>
+        </a>
+
+
+        <a
+            href="reports.html"
+            class="nav-item"
+        >
+            <span>📊</span>
+            <span>Reports</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a
+            href="#"
+            class="nav-item"
+        >
+            <span>⚙️</span>
+            <span>Settings</span>
+        </a>
+
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+        >
+            <span>🚪</span>
+            <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="main-content">
+
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div></div>
+
+        <div class="profile">
+
+            <div class="notification">
+                🔔
+            </div>
+
+            <div class="avatar">
+                P
+            </div>
+
+            <div class="profile-info">
+
+                <strong id="profileName">
+                    Prasad Kangralkar
+                </strong>
+
+                <span id="profileEmail">
+                    Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- PAGE -->
+
+    <section class="page-container">
+
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>
+                    Payments
+                </h1>
+
+                <p>
+                    Track pending and completed payments.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+        ================================================== -->
+
+        <div class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon pending-icon">
+                    ⏳
+                </div>
+
+                <div>
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong id="pendingAmount">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon overdue-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <span>
+                        Overdue
+                    </span>
+
+                    <strong id="overdueAmount">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon paid-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        Paid
+                    </span>
+
+                    <strong id="paidAmount">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PAYMENTS CARD
+        ================================================== -->
+
+        <div class="payments-card">
+
+
+            <div class="payments-header">
+
+                <div>
+
+                    <h2>
+                        Payment History
+                    </h2>
+
+                    <p id="paymentCount">
+                        Loading payments...
+                    </p>
+
+                </div>
+
+
+                <div class="filters">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="🔍 Search payments..."
+                    >
+
+
+                    <select id="statusFilter">
+
+                       <option value="all">All</option>
+<option value="pending">Pending</option>
+<option value="partial">Partial</option>
+<option value="overdue">Overdue</option>
+<option value="paid">Paid</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+            <!-- PAYMENT TABLE HEADER -->
+<div class="payment-list-header">
+
+    <div>Person</div>
+
+    <div>Transaction</div>
+
+    <div>Due Date</div>
+
+    <div>Amount</div>
+
+    <div>Status</div>
+
+    <div>Action</div>
+
+</div>
+
+
+
+            <!-- =================================================
+                 PAYMENT LIST
+            ================================================== -->
+
+            <div
+                id="paymentsList"
+                class="payments-list"
+            >
+
+                <div class="loading">
+                    Loading payments...
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script
+    type="module"
+    src="/js/payments.js"
+></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | SmartKhata</title>
+
+    <link rel="stylesheet" href="/css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ₹
+            </div>
+
+            <div>
+                <h2>SmartKhata</h2>
+                <span>Money Management</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <!-- Dashboard -->
+
+            <a
+                href="/dashboard.html"
+                class="nav-item active"
+            >
+
+                <span>🏠</span>
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <!-- People -->
+
+            <a
+                href="/people.html"
+                class="nav-item"
+            >
+
+                <span>👥</span>
+                <span>People</span>
+
+            </a>
+
+
+            <!-- Credit -->
+
+           <a href="/transactions.html" class="nav-item">
+
+                <span>💰</span>
+                <span>Transactions</span>
+
+            </a>
+
+
+            <!-- Payments -->
+
+           <a href="/payments.html" class="nav-item">
+    <span>💸</span>
+    <span>Payments</span>
+</a>
+
+
+            <!-- Reminders -->
+
+            <a
+                href="reminders.html"
+                class="nav-item"
+            >
+
+                <span>🔔</span>
+                <span>Reminders</span>
+
+            </a>
+
+
+            <!-- Reports -->
+
+            <a
+                href="reports.html"
+                class="nav-item"
+            >
+
+                <span>📊</span>
+                <span>Reports</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Bottom Navigation -->
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span>⚙️</span>
+                <span>Settings</span>
+
+            </a>
+
+
+            <button
+                id="logoutButton"
+                class="nav-item logout-button"
+            >
+
+                <span>🚪</span>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP BAR
+             ================================================= -->
+
+        <header class="topbar">
+
+            <!-- Mobile Menu -->
+
+            <button
+                id="menuButton"
+                class="menu-button"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-right">
+
+
+                <!-- Notification -->
+
+                <button
+                    class="notification-button"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+
+                <!-- Profile -->
+
+                <div class="profile">
+
+                    <div class="avatar">
+
+                        <span id="userInitial">
+                            U
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <strong id="userName">
+                            User
+                        </strong>
+
+                        <span id="userEmail">
+                            Loading...
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+             ================================================= -->
+
+        <section class="dashboard-container">
+
+
+            <!-- =================================================
+                 WELCOME SECTION
+                 ================================================= -->
+
+            <div class="welcome-section">
+
+                <div>
+
+                   <h1>
+    Welcome back,
+    <span id="welcomeName">
+        there
+    </span>
+    👋
+</h1>
+
+<p>
+    Here's what's happening with your finances.
+</p>
+
+                </div>
+
+
+                <button
+                    class="add-transaction-button"
+                    id="addTransactionButton"
+                >
+
+                    <span>＋</span>
+
+                    Add Transaction
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+                 ================================================= -->
+
+            <div class="summary-grid">
+
+
+                <!-- TO RECEIVE -->
+
+                <div class="summary-card receive">
+
+                    <div class="card-top">
+
+                        <div>
+
+                            <span class="card-label">
+                                To Receive
+                            </span>
+
+                            <h2 id="totalReceive">
+                                ₹0.00
+                            </h2>
+
+                        </div>
+
+
+                        <div class="card-icon">
+                            ↓
+                        </div>
+
+                    </div>
+
+
+                    <p class="card-description">
+                        Money owed to you
+                    </p>
+
+                </div>
+
+
+
+                <!-- TO PAY -->
+
+                <div class="summary-card pay">
+
+                    <div class="card-top">
+
+                        <div>
+
+                            <span class="card-label">
+                                To Pay
+                            </span>
+
+                            <h2 id="totalPay">
+                                ₹0.00
+                            </h2>
+
+                        </div>
+
+
+                        <div class="card-icon">
+                            ↑
+                        </div>
+
+                    </div>
+
+
+                    <p class="card-description">
+                        Money you owe
+                    </p>
+
+                </div>
+
+
+
+                <!-- PENDING -->
+
+                <div class="summary-card pending">
+
+                    <div class="card-top">
+
+                        <div>
+
+                            <span class="card-label">
+                                Pending
+                            </span>
+
+                            <h2 id="totalPending">
+                                ₹0.00
+                            </h2>
+
+                        </div>
+
+
+                        <div class="card-icon">
+                            ⏳
+                        </div>
+
+                    </div>
+
+
+                    <p class="card-description">
+                        Outstanding amount
+                    </p>
+
+                </div>
+
+
+
+                <!-- OVERDUE -->
+
+                <div class="summary-card overdue">
+
+                    <div class="card-top">
+
+                        <div>
+
+                            <span class="card-label">
+                                Overdue
+                            </span>
+
+                            <h2 id="totalOverdue">
+                                ₹0.00
+                            </h2>
+
+                        </div>
+
+
+                        <div class="card-icon">
+                            ⚠
+                        </div>
+
+                    </div>
+
+
+                    <p class="card-description">
+                        Past due payments
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LOWER DASHBOARD
+                 ================================================= -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- =================================================
+                     RECENT TRANSACTIONS
+                     ================================================= -->
+
+                <section class="dashboard-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Recent Transactions
+                            </h2>
+
+
+                            <p>
+                                Your latest credit and debit activity
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="view-all"
+                            id="viewTransactionsButton"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="transactionsList"
+                        class="transactions-list"
+                    >
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                🧾
+                            </div>
+
+
+                            <h3>
+                                No transactions yet
+                            </h3>
+
+
+                            <p>
+                                Add your first transaction to get started.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     UPCOMING PAYMENTS
+                     ================================================= -->
+
+                <section class="dashboard-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Upcoming Payments
+                            </h2>
+
+
+                            <p>
+                                Payments that need your attention
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="view-all"
+                            id="viewRemindersButton"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="remindersList"
+                        class="reminders-list"
+                    >
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                📅
+                            </div>
+
+
+                            <h3>
+                                No upcoming payments
+                            </h3>
+
+
+                            <p>
+                                You're all caught up.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        type="module"
+        src="/js/dashboard.js"
+    ></script>
+
+</body>
+
+</html>

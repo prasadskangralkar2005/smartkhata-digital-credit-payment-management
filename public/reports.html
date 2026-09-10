@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Reports - SmartKhata</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/reports.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ₹
+        </div>
+
+        <div>
+
+            <h2>
+                SmartKhata
+            </h2>
+
+            <span>
+                Money Management
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navigation">
+
+        <a
+            href="/dashboard.html"
+            class="nav-item"
+        >
+            <span>🏠</span>
+            <span>Dashboard</span>
+        </a>
+
+
+        <a
+            href="/people.html"
+            class="nav-item"
+        >
+            <span>👥</span>
+            <span>People</span>
+        </a>
+
+
+        <a
+            href="/transactions.html"
+            class="nav-item"
+        >
+            <span>💰</span>
+            <span>Transactions</span>
+        </a>
+
+
+        <a
+            href="/payments.html"
+            class="nav-item"
+        >
+            <span>💸</span>
+            <span>Payments</span>
+        </a>
+
+
+        <a
+            href="/reminders.html"
+            class="nav-item"
+        >
+            <span>🔔</span>
+            <span>Reminders</span>
+        </a>
+
+
+        <a
+            href="/reports.html"
+            class="nav-item active"
+        >
+            <span>📊</span>
+            <span>Reports</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a
+            href="#"
+            class="nav-item"
+        >
+            <span>⚙️</span>
+            <span>Settings</span>
+        </a>
+
+
+        <button
+            id="logoutButton"
+            class="nav-item logout-item"
+        >
+            <span>🚪</span>
+            <span>Logout</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="main-content">
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div></div>
+
+
+        <div class="profile-area">
+
+            <button
+                class="notification-button"
+            >
+                🔔
+            </button>
+
+
+            <div class="profile-avatar">
+
+                <span id="userInitial">
+                    P
+                </span>
+
+            </div>
+
+
+            <div class="profile-details">
+
+                <strong id="userName">
+                    User
+                </strong>
+
+                <span id="userEmail">
+                    user@email.com
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENT
+    ====================================================== -->
+
+    <section class="content">
+
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>
+                    Reports
+                </h1>
+
+                <p>
+                    Understand your financial activity and trends.
+                </p>
+
+            </div>
+
+
+            <button
+                id="refreshButton"
+                class="refresh-button"
+            >
+                ↻ Refresh
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+        ================================================== -->
+
+        <div class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon receive-icon">
+                    ↓
+                </div>
+
+                <div>
+
+                   <span>
+    Money Received
+</span>
+
+                    <strong id="totalReceived">
+                        ₹0.00
+                    </strong>
+
+                    <small>
+                        Credit transactions
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon pay-icon">
+                    ↑
+                </div>
+
+                <div>
+
+                   <span>
+    Money Paid
+</span>
+
+                    <strong id="totalPaid">
+                        ₹0.00
+                    </strong>
+
+                    <small>
+                        Debit transactions
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon pending-icon">
+                    ⏳
+                </div>
+
+                <div>
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong id="totalPending">
+                        ₹0.00
+                    </strong>
+
+                    <small>
+                        Outstanding amount
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon overdue-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <span>
+                        Overdue
+                    </span>
+
+                    <strong id="totalOverdue">
+                        ₹0.00
+                    </strong>
+
+                    <small>
+                        Past due amount
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CHARTS
+        ================================================== -->
+
+        <div class="charts-grid">
+
+
+            <!-- CREDIT / DEBIT -->
+
+            <section class="chart-card">
+
+                <div class="chart-header">
+
+                    <div>
+
+                        <h2>
+                            Credit vs Debit
+                        </h2>
+
+                        <p>
+                            Overall transaction distribution
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="creditDebitChart"
+                    ></canvas>
+
+                </div>
+
+            </section>
+
+
+            <!-- STATUS -->
+
+            <section class="chart-card">
+
+                <div class="chart-header">
+
+                    <div>
+
+                        <h2>
+                            Payment Status
+                        </h2>
+
+                        <p>
+                            Paid, pending and overdue
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="statusChart"
+                    ></canvas>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================================
+             MONTHLY ACTIVITY
+        ================================================== -->
+
+        <section class="chart-card monthly-card">
+
+            <div class="chart-header">
+
+                <div>
+
+                    <h2>
+                        Monthly Activity
+                    </h2>
+
+                    <p>
+                        Credit and debit activity over the last 6 months
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="monthly-chart-container">
+
+                <canvas
+                    id="monthlyChart"
+                ></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TRANSACTION BREAKDOWN
+        ================================================== -->
+
+        <section class="breakdown-card">
+
+            <div class="chart-header">
+
+                <div>
+
+                    <h2>
+                        Transaction Breakdown
+                    </h2>
+
+                    <p>
+                        Summary of your transactions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Type
+                            </th>
+
+                            <th>
+                                Transactions
+                            </th>
+
+                            <th>
+                                Total Amount
+                            </th>
+
+                            <th>
+                                Paid
+                            </th>
+
+                            <th>
+                                Outstanding
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+
+                                <span class="type-label credit-label">
+                                    + Credit
+                                </span>
+
+                            </td>
+
+                            <td id="creditCount">
+                                0
+                            </td>
+
+                            <td id="creditAmount">
+                                ₹0.00
+                            </td>
+
+                            <td id="creditPaid">
+                                ₹0.00
+                            </td>
+
+                            <td id="creditOutstanding">
+                                ₹0.00
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <span class="type-label debit-label">
+                                    - Debit
+                                </span>
+
+                            </td>
+
+                            <td id="debitCount">
+                                0
+                            </td>
+
+                            <td id="debitAmount">
+                                ₹0.00
+                            </td>
+
+                            <td id="debitPaid">
+                                ₹0.00
+                            </td>
+
+                            <td id="debitOutstanding">
+                                ₹0.00
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     CHART.JS
+========================================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/chart.js"
+></script>
+
+
+<script
+    type="module"
+    src="/js/reports.js"
+></script>
+
+
+</body>
+
+</html>

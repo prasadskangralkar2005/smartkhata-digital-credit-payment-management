@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Reminders - SmartKhata</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/reminders.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ₹
+            </div>
+
+            <div>
+                <h2>SmartKhata</h2>
+                <span>Money Management</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a
+                href="/dashboard.html"
+                class="nav-item"
+            >
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="/people.html"
+                class="nav-item"
+            >
+                <span>👥</span>
+                <span>People</span>
+            </a>
+
+
+            <a
+                href="/transactions.html"
+                class="nav-item"
+            >
+                <span>💰</span>
+                <span>Transactions</span>
+            </a>
+
+
+            <a
+                href="/payments.html"
+                class="nav-item"
+            >
+                <span>💸</span>
+                <span>Payments</span>
+            </a>
+
+
+            <a
+                href="/reminders.html"
+                class="nav-item active"
+            >
+                <span>🔔</span>
+                <span>Reminders</span>
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="nav-item"
+                id="reportsLink"
+            >
+                <span>📊</span>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+
+            <button
+                class="nav-item logout-item"
+                id="logoutButton"
+            >
+                <span>🚪</span>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div></div>
+
+
+            <div class="profile-area">
+
+                <button class="notification-button">
+                    🔔
+                </button>
+
+
+                <div class="profile-avatar">
+                    <span id="userInitial">P</span>
+                </div>
+
+
+                <div class="profile-details">
+
+                    <strong id="userName">
+                        User
+                    </strong>
+
+                    <span id="userEmail">
+                        user@email.com
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <section class="content">
+
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>
+                        Reminders
+                    </h1>
+
+                    <p>
+                        Never miss a payment deadline.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SUMMARY
+            ================================================== -->
+
+            <div class="summary-grid">
+
+
+                <div class="summary-card overdue-card">
+
+                    <div class="summary-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Overdue
+                        </span>
+
+                        <strong id="overdueCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Need attention
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card today-card">
+
+                    <div class="summary-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Due Today
+                        </span>
+
+                        <strong id="todayCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Due today
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card tomorrow-card">
+
+                    <div class="summary-icon">
+                        ⏰
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Tomorrow
+                        </span>
+
+                        <strong id="tomorrowCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Due tomorrow
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card upcoming-card">
+
+                    <div class="summary-icon">
+                        📌
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Upcoming
+                        </span>
+
+                        <strong id="upcomingCount">
+                            0
+                        </strong>
+
+                        <small>
+                            Next 7 days
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 REMINDER LIST
+            ================================================== -->
+
+            <section class="reminder-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Payment Reminders
+                        </h2>
+
+                        <span id="reminderCount">
+                            Loading reminders...
+                        </span>
+
+                    </div>
+
+
+                    <div class="filter-area">
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="🔍 Search reminders..."
+                        >
+
+
+                        <select id="reminderFilter">
+
+                            <option value="all">
+                                All Reminders
+                            </option>
+
+                            <option value="overdue">
+                                Overdue
+                            </option>
+
+                            <option value="today">
+                                Due Today
+                            </option>
+
+                            <option value="tomorrow">
+                                Tomorrow
+                            </option>
+
+                            <option value="upcoming">
+                                Upcoming
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="remindersList"
+                    class="reminders-list"
+                >
+
+                    <div class="loading">
+                        Loading reminders...
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="/js/reminders.js"
+    ></script>
+
+</body>
+
+</html>
