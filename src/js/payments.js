@@ -3,7 +3,7 @@
 // Partial Payments + Payment History
 // ============================================================
 
-import { supabase } from "/js/supabase.js";
+import { supabase } from "./supabase.js";
 
 
 // ============================================================
